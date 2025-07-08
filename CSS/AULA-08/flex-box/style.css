@@ -1,0 +1,42 @@
+body {
+    background-color: #b3b3b3;
+}
+
+.item-1 {
+    background-color: lightblue;
+}
+
+.item-2 {
+    background-color: lightgreen;
+}
+
+.item-3 {
+    background-color: lightcoral;
+}
+
+.container {
+    width: 100%;
+    border: 4px dashed gray;
+    
+    display: flex;
+    /* flex-direction: row;
+    flex-wrap: wrap; */
+    flex-flow: row wrap;
+    justify-content: center; /* Eixo Principal */
+    align-items: stretch; /* Eixo Cruzado */
+    align-content: stretch;
+    gap: 15px;
+}
+
+.item {
+    padding: 10px;
+    /* max-width: 400px; */
+    min-width: 300px;
+    min-height: 300px;
+    flex: 1;
+}
+
+.item-3 {
+    /* align-self: end; */
+    flex: 4;
+}

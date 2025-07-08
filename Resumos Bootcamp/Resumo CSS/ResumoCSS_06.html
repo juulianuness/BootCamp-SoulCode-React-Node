@@ -1,0 +1,84 @@
+
+
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOTCAMP DIA 06</title>
+    <link rel="stylesheet" href="styleResCSS06.css">
+</head>
+<body>
+    <h1>RESUMO PESSOAL BOOTCAMP DIA 06</h1> 
+
+    <h1 style="color:tomato">CSS</h1> 
+    <p>Linguagem de estilo Usada para aplicar visual a pagina</p>
+
+    <h2 style="color:tomato">Tipos de Estilzação</h2>
+    <p><strong>Css Inline</strong> - Na mesma linha do HTML</p>
+    <p><strong>Estilização Interna</strong> - Feito no HTML pela abertira e fechamento da tag style. no head</p>
+    <p><strong>Estilização Externa</strong> - Criando um novo arquivo .CSS e linkando ele no HTML pela tag link </p>
+
+    <h2 style="color: tomato">Estrutura </h2>
+    <h3>Propriedade : valor ; </h3> <span>Ex: color : red ;</span>
+
+    <h2 style="color:tomato">Sintax e Seletores</h2>
+    <p><strong>Seletores</strong> São um mecanismo que nos permite selecionar grupos de elementos existentes da pagina de diversas formas</p>
+
+    <strong>Exemplo</strong>
+    <p>Propriedade1 : valor1; <br>
+    Propriedade2 : valor2; <br>
+    Propriedade3 : valor3; </p>
+
+    <h3 style="color: darkblue">Quando quero identificar um elemento ID, preciso colocar o # antes do nome dele no CSS <br>
+    Quando quero identificar um elemento CLASS, preciso colocar o . antes do nome dele no CSS </h3>
+
+
+    <h2 style="color:tomato">Seletor Class</h2>
+    <span>O nome da class posso repetir varias vezes, <strong>JA O ID NÃO POSSO REPETIR</strong></span>
+
+    <p style="color: darkblue"><strong> # slogan .button { ... }  -  </strong>Dessa forma me refiro ao botão que está dentro da classe slogan</p>
+
+    <p style="color: darkblue"><strong> # slogan .button , #footer .button { ... }  -  </strong>Dessa forma me refiro aos botões que está dentro da classe slogan e footer</p>
+
+    <p style="color: darkblue"><strong> .carrossel h2 , carrossel h3, h4  { ... }  -  </strong>Dessa forma me refiro a todo h2 dentro de carrossel, a todo h3 dentro do carrossel e de todo h4 do arquivo html inteiro </p>
+
+    <h2 style="color:tomato">Pseudo-classe</h2>
+    <span> <strong>link:visited</strong> - quando um link for visitado</span> <br>
+    <span> <strong>link:active</strong> - quando segurar o mouse em cima do link</span> <br>
+    <span> <strong>link:hover</strong> - quando o mouse passar pelo link</span> <br>
+    <span> <strong>link:focus</strong> - destaca parte da mensagem </span>
+
+    <h2 style="color:tomato">Especificidade e herança</h2>
+    <p><strong>Especificidade</strong> Mecanismo que o CSS usa para determinar qual estilo será aplicado a um elemento quando existem regras de estilo conflitante <br>
+    Cada seletor possui um valor de especificidade atribuido, que e calculado com base nos diferentes componentes do seletor <br>
+    Quanto mis específico o seletor for, maior será a sua especificidade e maior será a probabilidade de que seu estio seja aplicado</p>
+
+    <h2 style="color:tomato">Ordem de especificidade</h2> 
+    <p><strong>P, DIV...</strong> ESPECIFICIDADE MODERADA</p>
+    <p><strong>CLASSES, ATRIBUTOS, PSEUDO-CLASSES...</strong> ESPECIFICIDADE MEDIA</p>
+    <p><strong>ID...</strong> ESPECIFICIDADE ALTA</p>
+    <p><strong>P, DIV...</strong> ESPECIFICIDADE MODERADA</p>
+    <p><strong>!IMPORTANT;</strong> ESPECIFICIDADE PRIORITÁRIA</p>
+
+    <P>                      <pre>                     <strong>(1,2,3)</strong> </pre></P> 
+    <SPAN><b>1</b>(id) , <b>2</b>(classe, atributo, pseudo-classe) <b>3</b>(tag)</SPAN>
+    <p>ex: h2#titulo.titulo <br>
+    (1,1,1)</p>
+
+    <h2 style="color:tomato">Herança</h2>
+
+    <p> Cor, fonte, tamanho de texto herdados do PAI, (nem todas as propriedades são herdadas) Body é um pai </p>
+
+    <p><strong>Prioridades</strong> <br>
+    Especificidade <br>
+    Ordem que aparecem no codigo <br>
+     menor especificidade não apli. quando não ha regras mais específicas</p>
+  
+
+
+    
+
+    
+</body>
+</html>

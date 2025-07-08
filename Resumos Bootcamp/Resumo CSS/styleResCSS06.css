@@ -1,0 +1,101 @@
+/* RESET BÁSICO */
+/* Remove margens e preenchimentos padrão dos navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CORPO DA PÁGINA */
+/* Define fonte geral, cor de fundo e centraliza o conteúdo */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f7ff; /* azul bem claro */
+    color: #333; /* cinza escuro */
+    padding: 40px 20px; /* espaço interno */
+    max-width: 900px;
+    margin: auto; /* centraliza horizontalmente */
+}
+
+/* TÍTULO PRINCIPAL (h1) */
+/* Cor viva, centralizado, com bordas arredondadas */
+h1 {
+    background-color: #4a90e2; /* azul vibrante */
+    color: #fff; /* branco */
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* sombra suave */
+}
+
+/* TÍTULOS DE SEÇÃO (h2) */
+/* Usa barra na lateral esquerda e uma cor forte */
+h2 {
+    color: #4a90e2;
+    font-size: 1.5em;
+    margin-top: 40px;
+    border-left: 6px solid #4a90e2;
+    padding-left: 12px;
+}
+
+/* TÍTULOS MENORES (h3) */
+/* Um pouco menor que h2, sem borda lateral */
+h3 {
+    font-size: 1.2em;
+    margin-top: 20px;
+    color: #2c3e50; /* azul petróleo */
+}
+
+/* PARÁGRAFOS E SPAN */
+/* Define espaçamento entre os blocos de texto */
+p, span {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1em;
+    line-height: 1.6; /* altura das linhas */
+}
+
+/* BLOCO DE EXEMPLO */
+/* Visual parecido com uma “nota”, ideal para mostrar código ou destaque */
+.exemplo {
+    background-color: #e8f0fe; /* azul clarinho */
+    border-left: 5px solid #4a90e2;
+    padding: 15px;
+    margin: 15px 0;
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre-line; /* mantém quebras de linha no texto */
+}
+
+/* TEXTO DESTACADO COM STRONG */
+/* Cor diferente para chamar atenção em palavras importantes */
+strong {
+    color: #d35400; /* laranja forte */
+}
+
+/* BLOCO DE CÓDIGO (PRE) */
+/* Caixa de código neutra e destacada */
+pre {
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-family: monospace;
+    margin: 10px 0;
+}
+
+/* TEXTO AZUL */
+/* Pode ser usado com class="azul" para aplicar esse tom de azul */
+.azul {
+    color: #2e86de;
+}
+
+/* CÓDIGOS CURTOS OU EXPLICATIVOS */
+/* Parecido com .exemplo, mas mais neutro */
+.codigo {
+    background-color: #f5f5f5;
+    border-left: 4px solid #999;
+    padding: 10px;
+    margin-top: 10px;
+    font-family: monospace;
+    font-size: 0.95em;
+}

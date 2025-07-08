@@ -1,0 +1,11 @@
+<style>
+  /* Esconde todos os itens do menu */
+  .navbar-nav .nav-item {
+    display: none;
+  }
+
+  /* Exibe apenas o item que tem href="#gratis" */
+  .navbar-nav .nav-item .nav-link[href="#gratis"] {
+    display: block;
+  }
+</style>

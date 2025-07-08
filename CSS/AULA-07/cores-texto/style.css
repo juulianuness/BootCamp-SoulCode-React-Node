@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+#name {
+    color: gold;
+    background-color: #111111;
+    font-family: impact;
+    font-weight: 200;
+    font-size: 50px;
+    text-transform: uppercase;
+    text-decoration: line-through;
+}
+
+#RGB {
+    color: rgb(25,155,200);
+    background-color: rgb(241, 183, 106);
+    font-family: 'Poppins';
+    font-weight: 100;
+    font-size: 3.125rem;
+    text-align: center;
+    
+}
+
+#hexa {
+    color: #ffffff;
+    background-color: gray;
+    font-family: 'montserrat';
+    font-weight: ;
+
+}
+
+#alpha {
+    /* color: #00000080; */
+    color: rgba(0red, 0, 0, 0.5);
+    background-color: rgba(155, 10, 20, 0.8);
+    font-family: monospace;
+    font-style: oblique;
+    line-height: 1.5;
+    word-spacing: 8px;
+    letter-spacing: -1.5px;
+}

@@ -1,0 +1,36 @@
+body {
+    margin: 0 auto;
+    
+    box-sizing: border-box;
+    
+
+}
+h1 {
+    text-align: center;
+}
+
+.galeria {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    display: flex;
+    flex-wrap:wrap;
+    gap: 20px;
+    justify-content:center;
+
+}
+
+.foto {
+    max-height: 200px;
+    max-width: 300px;
+    flex: 1;
+    flex-direction: row;
+    object-fit: cover;
+    
+    
+    
+    
+
+
+}

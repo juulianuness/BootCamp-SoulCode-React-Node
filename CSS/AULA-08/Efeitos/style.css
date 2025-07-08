@@ -1,0 +1,43 @@
+.caixa {
+    width: 300px;
+    height: 200px;
+    margin: 0 auto;
+    margin: 20px auto;
+}
+
+.azul {
+    background-color:#9abaf5;
+    box-shadow: 0px 6px 15px 5px rgba(0, 0, 0, 0.2);
+}
+
+.gradiente {
+    background-color: pink;
+    background: radial-gradient(pink, #a72a3f);
+    
+}
+.imagem {
+    width: 100%;
+    background-color: orange;
+    background-image: url('image.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;   
+}
+
+.quadrado {
+    width: 100px;
+    height: 100px;
+    margin: 40px auto;
+    border: 8px solid grey;
+    border-radius: 50%;
+    border-left-color: transparent;
+    animation: spin 1s infinite linear;
+
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(1turn);
+    }
+}

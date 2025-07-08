@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> informações de participantes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Informações de participantes</h1>
+    <form id="Informacoes-pessoais"
+            action="#"
+            method="post"
+            style="display: flex;flex-direction: column;align-items: start;gap: 10px;">
+
+    
+    <label for="nome">Nome Completo</label>
+    <input type="text" name="nome" id="nome" placeholder="Digite seu nome">
+
+    
+    <label for="idade">Idade</label>
+    <input type="number" name="idade" id="idade" placeholder="Apenas numeros">
+
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" placeholder="exemplo@email.com">
+
+    <label for="cidade">Cidade</label>
+    <input type="text" name="cidade" id="cidade">
+
+    <label for="estado">Estado</label>
+    <input type="text" name="estado" id="estado">
+
+
+
+    <label for="escolaridade">Escolaridade</label>
+    <select name="escolaridade" id="escolaridade">
+        <option value="" Selected disabled >Selecione</option>
+        <option value="Ensino Medio">Ensino Médio</option>
+        <option value="Ensino Técnico">Ensino Técnico</option>
+        <option value="Ensino Superior">Ensino Superior</option>
+        <option value="Outros">Outros</option>
+    </select>
+
+    <label>Área de Interesse</label>
+
+    <div>
+        <input type="checkbox" name="interesse" id="programacao" value="Programação">
+    <label for="programacao">Programação</label>
+    </div>
+
+    <div>
+        <input type="checkbox" name="interesse" id="design" value="Design">
+        <label for="design">Design</label>
+    </div>
+
+    <div>
+        <input type="checkbox" name="interesse" id="robotica" value="Robótica">
+        <label for="robotica">Robótica</label>
+    </div>
+
+    <div>
+        <input type="checkbox" name="interesse" id="jogos-digitais" value="Jogos Digitais">
+        <label for="jogos-digitais">Jogos Digitais</label>
+    </div>
+
+    <div>
+        <input type="checkbox" name="interesse" id="ia" value="Inteligência Artificial">
+        <label for="ia">Inteligência Artificial</label>
+    </div>
+    
+    <label>Participará de Palestra</label>
+
+    <div>
+        <input type="radio" name="participar" id="sim" value="Sim" required>
+        <label for="sim">SIM</label>
+    </div>
+    
+    <div>
+        <input type="radio" name="participar" id="nao" value="Não" required>
+        <label for="nao">NÃO</label>
+    </div>
+
+    <button type="submit">Enviar</button>
+
+
+
+
+    </form>
+
+
+    
+</body>
+</html>

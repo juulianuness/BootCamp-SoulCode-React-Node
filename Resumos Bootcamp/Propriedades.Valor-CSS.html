@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=
+    , initial-scale=1.0"
+        />
+        <title>Propriedades: valor - CSS</title>
+    </head>
+    <body>
+        <p><strong>Background-color</strong> Cor do fundo</p>
+        <p><strong>Font-style</strong> Estilo da fonte (italico, normal)</p>
+        <p>
+            <strong>Font-weigth</strong> Peso/negrito ( de 100 a 900 - normal,
+            ligth, bold, black)
+        </p>
+        <p><strong>Text-transform</strong> None, maiusc, minusc, 1° maiusc.</p>
+        <p>
+            <strong>Text-decoration</strong> Por/tirar linhas no texto
+            (underline, overline, line-through)
+        </p>
+        <p>
+            <strong>Text-align</strong> Alinhamento do texto (center, end,
+            justfy, left, rigth)
+        </p>
+        <p><strong>line-heigth</strong> Tamanho/altura da linha do texto</p>
+        <p><strong>Word-spacing</strong> Espaço entre as palavras</p>
+        <p>
+            <strong>letter-spacing</strong> Espaço entre as letras (positivo ou
+            negativo)
+        </p>
+        <p><strong>List-style:none;</strong> Tira os pontinhos da lista</p>
+
+        <h1 style="color: tomato">Box Model</h1>
+        <p>
+            <strong>Display block</strong> Ocupa toda a linha (ex: <b>H1, P</b>)
+            Gera uma nova linha em todo o espaço
+        </p>
+        <p>
+            <strong>Display inline</strong> Ocupa apenas o ligar que eu pedir
+            (ex: <b> A, SPAN, STRONG, EM</b>)
+        </p>
+
+        <p><strong>Content-Box</strong> Area onde o conteudo é exibido</p>
+        <p><strong>Padding-box</strong> Espaço em volta do conteudo</p>
+        <p><strong>Border-box</strong> Conteudo e comprimento</p>
+        <p>
+            <strong>Margin-box</strong> Conteudo, preenchimento e borda. Espaço
+            de fora (camada mais externa)
+        </p>
+        <p><strong>Margin</strong> (Top, right ,botton, left)</p>
+        <p>
+            <strong>Border</strong> (borda + largura + estilo + cor) / (ex:
+            border: 5x solid green), os estilos são <b>Solid</b>(reta),
+            <b>dashed</b>(tracejada), <b>dotted</b>(pontilhada)
+        </p>
+        <p>
+            <strong>Limites das caixas</strong> max-width / min-width /
+            max-length / min-length
+        </p>
+
+        <h1 style="color: tomato">Efeitos</h1>
+        <p>
+            <strong>Box-shadow </strong> Adiciona sombra ao redor de um elemento
+        </p>
+        <pre><p>
+            <b>h-shadow</b> (horizontal), <br />
+            <b>v-shadow</b> (vertical), <br />
+            <b>Blur</b> (Foco da sombra), <br />
+            <b>spread</b> (espalhamento da sombra)
+        </p></pre>
+
+        <h1 style="color: tomato">Background</h1>
+
+        <p><strong>Background-color </strong> Define a cor do fundo</p>
+        <p>
+            <strong>Background-image: url (caminho da imagem); </strong> Define
+            uma imagem para o fundo
+        </p>
+        <p>
+            <strong>Background-size: cover px; </strong> Se a imagem ficar
+            pequena ele repete
+        </p>
+        <p>
+            <strong>Background-repete: no repete </strong> Não repete a imagem
+        </p>
+        <p><strong>Background-position </strong> (Top, rigth, botton, left)</p>
+        <p>
+            <strong>Background-attachment </strong> "congela" a imagem no fundo
+        </p>
+        <p><strong>Opacity</strong> Controla a opacidade/transparencia</p>
+
+        <h1 style="color: tomato">flexbox</h1>
+
+        <p><strong>Flex-wrap </strong> Quebra a linha para a linha de baixo, se eu colocar. o NOWRAP deixa o scrol para a direita</p>
+        <p><strong>Flex-direction </strong> row e column - A Altura precisa estar definida</p>
+        <p><strong>Flex-flow: row wrap</strong> Os 2 juntos, flex-direction e Flex-wrap</p>
+        <p><strong>Justify-contant</strong> Alinha no eixo principal, se for linha, vai alinhar horizontalmente. (start,center,end,space-between,space-around, space-evenly)</p>
+        <p><strong>Aligh-Itens</strong> Alinha no eixo de cruzamento (contrario ao justify-contant). (<b>Só funciona se tiver altura definida</b>)</p>
+        <p><strong>Align contant</strong> Alinha os eixos do justify e do align</p>
+        <p><strong>Gap</strong> Espaço entre os itens nos 4 lados</p>
+        
+        <h1 style="color: tomato">Propriedades dos itens</h1>
+        
+        <p><strong>Align-self </strong> Pode sobrepor o align itens definido. Definindo uma propriedade especifica para um ou mais itens especificos</p>
+        <p><strong>Flex-wrap</strong> Caso não tenha altura definida, não quebra</p>
+        <p><strong>Flex</strong> Define a proporção de acordo com o espaço disponível. Cada um ajusta no limite que tem. (ex: flex:3 - ele vai ter o tamanho de 3 dos outros)</p>
+
+    </body>
+</html>

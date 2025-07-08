@@ -1,0 +1,81 @@
+body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #f7f0ff, #d2e3fc);
+      padding: 40px;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+      justify-content: center;
+      display: flex;
+    }
+
+    form {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      margin-right: 8px;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Informações de Participantes</h1>
+  <form id="informacoes-pessoais" action="#" method="post">
+    <label for="nome">Nome Completo</label>
+    <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required />
+
+    <label for="idade">Idade</label>
+    <input type="number" name="idade" id="idade" placeholder="Apenas números" required />
+
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" placeholder="exemplo@email.com" required />
+
+    <label for="cidade">Cidade</label>
+    <input type="text" name="cidade" id="cidade" required />
+
+    <label for="estado">Estado</label>
+    <input type="text" name="estado" id="estado" required /> 
