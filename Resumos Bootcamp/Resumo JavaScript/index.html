@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    <h1>
+        JavaScript
+
+    </h1>
+    <p>
+        Linguegem de programação que permite interatividade
+
+    </p>
+    <p>o Navegador que faz a execução do JS <br>
+        V8, mecanismo  que z a execução do JS <br>
+        O JS roda como cliente e como servidor(Node.js)
+    </p>
+
+    <p> 
+        < script src = "arquivo.js" > < /script >  Antes do fechamento do body para implementar o JS ao HTML
+    </p>
+
+    <p> console.log -> Mostrar mensagem na tela <br>
+        console.error -> Mostrar uma mensagem de erro <br>
+        console.warn -> Mostrar uma mensagem de aviso
+    </p>
+
+    <h2>
+        Variaveis
+
+    </h2>
+
+    <p> Um container p um valor, como numeros que podemos usar em uma operação de adição ou uma sequencia de texto. <br>
+        Seu conteudo pode mudar ao decorrer do codigo. <br>
+        Codigo sem variavel não pode existir, pois elas são a base da pagina, p salvar dados ou intermediarios de algum processamento. <br>
+        Serve como memoria temporária de daados,  seja, variaveis são informações temporárias, se atualizar a pagina, as informações são perdidas. <br>
+        Variaveis NÃO são o valor em si, são apenas os locais em que está sendo guardado esse valor 
+    </p>
+
+    <h2>Como declarar uma variavel</h2>
+
+    <p>
+        let + valor (instrução) + ; <br>
+        ex: let nome <br>
+            let idade 
+    </p>
+
+    <h2>Regras Basicas</h2>
+
+    <p>
+        Usar nomes descritivos para variaveis, que justifique o que ela faz. <br>
+        COMEÇAR COM LETRA, SUBLINHADO OU $  <br>
+        Não usar palavras reservadas (let, var, function, if...) <br>
+        camelCase, começa minusculo e as proximas palavras começam com letra maiuscula
+    </p>
+
+    <h2>Para defnir um valor a variavel</h2>
+
+    <p>Let nome, let idade, let nota</p>
+    <p> let nome = 'Julia'; <br>
+        let idade = 29; <br>
+        let nota = 9.8; <br>
+
+        (as variaveis já tem um valor, mas pode mudar depois) <br>
+        let nome = "Julia N" ( o valor antigo é perdido e substituido pelo novo valor, a menos que eu code para guardar) <br>
+        <br>
+        console.log(nome, idade) -> Mostra lado a lado <br>
+        console.log(nome) -> Mostra 1 em cada linha <br>
+        console.log(idade) -> Mostra 1 em cada linha <br>
+        console.log(idade, "anos") -> Mostra a idade com uma mensagem após <br>
+    </p>
+
+    <H2>Const</H2>
+    <p>Impede de alterar o valor da variavel (no lugar do let) e com letras maiusculas. (const não muda valor, let muda)</p>
+
+    <p>
+        JS é uma linguagem de programação de tipagem dinamica (texto, vetor, objeto, numero) e pode atribuir um valor a uma variavel sem declarar o tipo da variavel, o tipo vai ser declarado pela entrada. <br>
+        <br>
+
+         let hoje = "08/07/2025" <br>
+         hoje = 8 <br>
+         hoje = true; <br>
+         (mas é sempre melhor informar o tipo p não dar conflito)
+    </p>
+
+    <h2>tipos</h2>
+
+    <p>
+        <b>string - </b>let sobrenome = "Vieira"; <br>
+        <b>number - </b>let altura = 1.58; <br>
+        <b>number - </b>let peso = 60;<br>
+        <b>undefined</b> - let telefone;<br>
+        <b>object - </b>let cpf = null;<br>
+        <b>object - </b>let linguagens = ["Java", "JavaScript", "PHP"];<br>
+        <b>object - </b>let endereco = { cidade: "Joinville", estado: "SC" };<br>
+        <b>boolean -</b> let ensinoSuperior = false;<br>
+    </p>
+
+
+    <h2>Operadores Aritimeticos</h2>
+
+    <p>
+        let numero1 = 6, numero2 = 3; <br>
+
+        console.log(numero1, numero2); // 6 3 <br>
+
+        console.log(numero1 + numero2); // 9<br>
+        console.log(numero1 - numero2); // 3<br>
+        console.log(numero1 * numero2); // 18<br>
+        console.log(numero1 / numero2); // 2<br>
+        console.log(numero1 ** numero2); // 216<br>
+        console.log(numero1 % numero2); // 0<br>
+    </p>
+
+    <h2>oOperadores de atribuição</h2>
+
+    <p>
+        let numero3 = 3; <br>
+
+        numero3 += 4; // 7<br>
+
+        numero3 -= 2; // 5<br>
+
+        numero3 *= 4; // 20<br>
+
+        numero3 /= 10; // 2<br>
+
+        console.log(numero3); // 2<br>
+    </p>
+
+    <h2>Operadores de Incremento</h2>
+
+        <p>
+            let numero4 = 8; <br>
+            console.log(numero4); // 8<br>
+            console.log(++numero4); // 9<br>
+            console.log(numero4++); // 9<br>
+            console.log(numero4--); // 10<br>
+            console.log(--numero4); // 8<br>
+            <br>
+            numero4++; <br>
+            console.log(numero4); // 9<br>
+        </p>
+
+    <h2>operadores de comparação</h2>
+
+    <p>
+        let a = 2, b = 3; <br>
+
+        console.log(a == b); // false <br>
+        console.log(a != b); // true<br>
+        console.log(a > b); // false<br>
+        console.log(a < b); // true<br>
+        console.log(a >= b); // false<br>
+        console.log(a <= b); // true<br>
+        console.log(2 === "2"); // false<br>
+
+        console.log(0 == ""); // true ?????<br>
+        console.log(0 == false); // true ?????<br>
+
+        console.log("Gabriel" == "gabriel"); // false<br>
+        console.log("ANA" == "ANA"); // true<br>
+    </p>
+
+    <h2>Operadores logicos</h2>
+
+    <p>
+        let x = true, y = false; <br>
+
+        // Conjunção E &&, Disjunção OU ||, Negação NÃO !<br>
+
+        console.log(x && y); // false<br>
+        console.log(x || y); // true<br>
+        console.log(x && x); // true<br>
+        console.log(!x); // false<br>
+        console.log(!y && x); // true<br>
+
+        console.log(5 * 3 == 21 || 60 < 34 * 2); // true<br>
+        // 15 == 21 || 60 < 68<br>
+        // false || true<br>
+        // true<br>
+        // aritmeticas > comparação > logicas<br>
+    </p>
+
+
+            
+</body>
+</html>
