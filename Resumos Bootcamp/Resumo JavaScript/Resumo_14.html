@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOTCAMP DIA 14</title>
+</head>
+<body>
+    <h1>RESUMO PESSOAL BOOTCAMP DIA 14</h1>
+
+    <h2>Funções</h2>
+    <p>Bloco de codigo reutilizavel  que executa uma tarefa específica</p>
+    <p><b>Entrada + processamento + saida </b></p><br>
+    <p>ex: Função somar (n1 + n2) { <br>
+        return n1 + n2; <br>
+    } <br>
+    </p>
+    <b>n1 e n2 dos parenteses são os parametros, "return" quando eu quero o resultado da operação (mas não estou pedindo para mostrar na tela, apenas estou informando o que quero) e esse valor que eu pedi é o argumento da minha função</b>
+
+    <p>Só definir a função não quer dize que ela vai aparecer, preciso chamar ela fora do {} </p>
+
+    <p> a função só executa quendo coloco o ( ) </p>
+
+    <p> // Função sem parâmetros e sem retorno. <br>
+        // Função com parâmetros e sem retorno. <br>
+        // Função sem parâmetros e com retorno. <br>
+        // Função com parâmetros e com retorno. <br>
+    </p>
+
+    <h2>Função Anonima</h2>
+    <p>A variavel pode ser usada como função, desde que eu guarde ela em uma finção, precisa ser guardada dentro de uma variavel</p> 
+
+    <p>
+        const somar = function (n1, n2) { <br>
+            let soma = n1 + n2; <br>
+            return soma; <br>
+        } <br>
+
+        console.log(somar(12, 8)); // 20
+    </p>
+
+    <h2>// Funções de seta (Arrow Functions)</h2>
+
+<p>
+    const subtrair = (n1, n2) => n1 - n2;
+    
+    let resultado = subtrair(15, 9);
+    
+    console.log(resultado); // 6
+    
+    const quadrado = n => n**2;
+    
+    console.log(quadrado(8)); // 64
+</p>
+
+<h2>// Função de callback</h2>
+
+<p>
+    setTimeout(() => {
+        console.log("Acabou o tempo.");
+    }, 3000);
+    
+    setInterval(() => {
+        console.log("Passou 4 segundos.");
+    }, 4000);
+    
+    console.log("Final do código.");
+</p>
+
+<h2>// Função SIM/NÃO numero Par</h2>
+
+<p>
+    function verificarPar(numero) {
+        if (numero % 2 == 0) {
+            return "SIM";
+        }
+        return "NÃO";
+    }
+    
+    console.log(verificarPar(16));
+</p>
+    
+</body>
+</html>
