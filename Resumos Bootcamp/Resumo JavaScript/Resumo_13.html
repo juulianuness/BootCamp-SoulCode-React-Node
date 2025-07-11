@@ -11,6 +11,64 @@
     <h2>Condicionais</h2>
 
     <p>As chaves representam um bloco de codigo quando só tem ele </p>
+
+    <p><h2>Operador ternario</h2> não substitui o IF e o ELSE, mas pra situações simples é mais adequado usar.</p>
+    <p>Se a primeira consição não for atendida ele mostra a segunda condição. <br>
+        let estoque =0<br>
+        console.log(estoque > 0 ? "estoque sufi." : "estoque insuf") <br>
+
+        <b>A interrogação meio que pergunta se o qye tem na frente dela está correto, se tiver, a primeira condição é mostrada, se não estiver correto vai mostrar a segunda condição</b></p>
+
+        <h2>Estruturas de seleção</h2>
+
+        <><b>Switch</b> Usado quando tipo primitivo de dado (string ou numero) <br> 
+            <p><b>Case -</b> lista de casos</p>
+            <p><b>Break -</b> Quando achar o caso que eu pedi ele para a sequencia e sai do looping</p>
+            <p><b>Default -</b> Imprime a mensagem quando nenhum case foi encontrado</p>
+        
+        
+<br>
+    let cor = "vermelho"; <br>
+    <br>
+    switch (cor) {
+    
+            case "azul": <br>
+            case "vermelho":<br>
+            case "amarelo":<br>
+                console.log("Cor Primária");<br>
+                break;<br>
+            case "verde":<br>
+            case "laranja":<br>
+            case "roxo":<br>
+                console.log("Cor Secundária");<br>
+                break;<br>
+            default:
+            console.log("Esta cor não existe.");
+            }
+
+    <h2>Estrutura de recepção</h2>
+    Possibilitam executar o mesmo codigo repetidas vezes. <br>
+
+    <p>
+        <b>For -</b> Diversas vezes <br>
+        ex: For(expressão 1 ; expressão 2 ; expressão 3) {Bloco de codigo}; <br>
+        ex: For (let i=o ; i < 5 ; i++) { <br>
+            Console.log("o numero é, i");
+        }
+     </p> 
+
+    <p><b>For/in -</b> Percorre as propriedades de um objeto <br>
+    ex: Const Pessoa ={ nome: "André" , idade: 32}; <br>
+    For(let propriedade in pessoa); <br>
+    console.log(pripriedade); <br>
+    <b>(Nesse caso NOME e IDADE são as propriedades, da pessoa que é o ANDRÉ e tem os VALORES "ANDRÉ e 32")</b>
+        
+        
+    </p>
+    <p><b>For/of -</b> Percorre os valores de um objeto iteravel</p>
+    <p><b>while -</b> Percorre enquanto</p>
+    
+    
     
 </body>
 </html>
