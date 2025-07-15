@@ -22,6 +22,7 @@ titulo.style.color = "#336ee3";
 titulo.style.fontSize = "2rem";
 titulo.setAttribute("target", "_blank");
 
+
 const lista = [
     "TechSolutions",
     "CodeMaster Academy",

@@ -1,13 +1,17 @@
-const lampadas = [
-    "images/lampada-acesa.png",
-    "images/lampada-apagada.png"
-];
-
-let indice = 0;
 const lampada = document.querySelector("#lampada");
 
+const lampadaAcesa = "./images/lampada-apagada (1).png";
+const lampadaApaga = "./images/lampada-acesa (1).png";
+
+let apagada = true;
 
 setInterval(() => {
-    indice = (indice + 1) % lampadas.length;
-    lampada.src = lampadas[indice];
+    if (apagada) {
+        lampada.src = lampadaAcesa;
+        document.body.style.backgroundColor = "white";
+    } else {
+        lampada.src = lampadaApaga;
+        document.body.style.backgroundColor = "#040436";
+    }
+    apagada = !apagada;
 }, 1000);
