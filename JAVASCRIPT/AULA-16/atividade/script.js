@@ -1,17 +1,35 @@
-const lampada = document.querySelector("#lampada");
+const lampada = document.querySelector("#lampada"); // img (lâmpada)
+const botao = document.querySelector("#botao"); // button (botão)
+const chave = document.querySelector("#chave"); // img (interruptor)
 
-const lampadaAcesa = "./images/lampada-apagada (1).png";
-const lampadaApaga = "./images/lampada-acesa (1).png";
+const lampadaAcesa = "./images/lampada-acesa.png";
+const lampadaApaga = "./images/lampada-apagada.png";
+
+const on = "./images/on.png";
+const off = "./images/off.png";
 
 let apagada = true;
 
-setInterval(() => {
+botao.addEventListener("click", () => {
     if (apagada) {
+        chave.src = on;
         lampada.src = lampadaAcesa;
-        document.body.style.backgroundColor = "white";
+        document.body.style.backgroundColor = "#cececfff";
     } else {
+        chave.src = off;
         lampada.src = lampadaApaga;
         document.body.style.backgroundColor = "#040436";
     }
     apagada = !apagada;
-}, 1000);
+});
+
+// setInterval(() => {
+//     if (apagada) {
+//         lampada.src = lampadaAcesa;
+//         document.body.style.backgroundColor = "white";
+//     } else {
+//         lampada.src = lampadaApaga;
+//         document.body.style.backgroundColor = "#040436";
+//     }
+//     apagada = !apagada;
+// }, 2000);
