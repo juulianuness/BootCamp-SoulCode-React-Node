@@ -9,14 +9,13 @@ const produtosRouter = express.Router();
 const db = getFirestore(app);
 
 produtosRouter.get("/produtos", async (req, res) => {
-    const collection = db.collection("produtos").get(); // nome da coleção que quero consultar
-    const documents = await collection.get();
+    const documents = await db.collection("produtos").get(); // nome da coleção que quero consultar
     const produtos = [];
-    const produto = doc.data();
     documents.forEach((doc) => { //// pra cada documento da lista, ele vai inserir o documento convertido em data
+        const produto = doc.data();
         produtos.push(produto);
     });
-    res.status(200).json(produtos); //retorna a lista 
+    return res.status(200).json(produtos); //retorna a lista 
 });
 
 
