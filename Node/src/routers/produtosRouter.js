@@ -1,42 +1,80 @@
 import express from "express";
-import app from "../firebase/app.js";
-import { getFirestore } from "firebase-admin/firestore";
+import {
+    findAll,
+    findById,
+    remove,
+    save,
+    update
+} from "../services/produtosService.js";
 
-const produtosRouter = express.Router(); 
-
-
-// Busca por todos os produtos 
-const db = getFirestore(app);
+const produtosRouter = express.Router();
 
 produtosRouter.get("/produtos", async (req, res) => {
-    const documents = await db.collection("produtos").get(); // nome da coleção que quero consultar
-    const produtos = [];
-    documents.forEach((doc) => { //// pra cada documento da lista, ele vai inserir o documento convertido em data
-        const produto = doc.data();
-        produtos.push(produto);
-    });
-    return res.status(200).json(produtos); //retorna a lista 
-});
-
-
-// Consultando um item específico pelo id
-produtosRouter.get("/produtos/:id", async (req, res) => {
-    const id = req.params.id;
-    const doc = await db.collection("produtos").doc(id).get(); // especifico qual documento eu quero pegar. e não mais uma lista 
-    const dados = doc.data(); 
-
-    if (dados) {
-        res.status(200).json(dados); // retorna o que eu pedi 
-    } else {
-        res.status(404).send('Produto não encontrado!'); // se não encontrar, aparece essa mensagem
+    try {
+        const produtos = await findAll();
+        return res.status(200).json(produtos);
+    } catch (error) {
+        return res.status(500).json({ msg: "Erro interno no servidor." });
     }
 });
 
-// Adicionar um novo documento
+produtosRouter.get("/produtos/:id", async (req, res) => {
+    try {
+        const id = req.params.id;
+        const produto = await findById(id);
+        if (produto) {
+            return res.status(200).json(produto);
+        } else {
+            return res.status(404).json({ msg: "Produto não encontrado." });
+        }
+    } catch (error) {
+        return res.status(500).json({ msg: "Erro interno no servidor." });
+    }
+});
+
 produtosRouter.post("/produtos", async (req, res) => {
-    const produto = req.body;
-    await db.collection("produtos").add(produto);
-    res.status(201).json({ msg: "Produto Cadastrado" });
+    try {
+        const produto = req.body;
+        await save(produto);
+        return res.status(201).json({ msg: "Produto cadastrado." });
+    } catch (error) {
+        return res.status(500).json({ msg: "Erro interno no servidor." });
+    }
+});
+
+produtosRouter.put("/produtos/:id", async (req, res) => {
+    try {
+        const id = req.params.id;
+        const produto = req.body;
+        const flag = await update(id, produto);
+        if (flag) {
+            return res.status(200).json({ msg: "Produto alterado." });
+        } else {
+            return res.status(404).json({ msg: "Produto não encontrado." });
+        }
+    } catch (error) {
+        return res.status(500).json({ msg: "Erro interno no servidor." });
+    }
+});
+
+produtosRouter.delete("/produtos/:id", async (req, res) => {
+    try {
+        const id = req.params.id;
+        const flag = await remove(id);
+        if (flag) {
+            return res.status(200).json({ msg: "Produto excluido." });
+        } else {
+            return res.status(404).json({ msg: "Produto não encontrado." });
+        }
+    } catch (error) {
+        return res.status(500).json({ msg: "Erro interno no servidor." });
+    }
 });
 
 export default produtosRouter;
+
+// CRUD
+// Create - Criar/Cadastrar
+// Read - Ler/Consultar
+// Update - Atualizar
+// Delete - Excluir
