@@ -6,7 +6,7 @@ export default function Footer() {
         <footer>
             <Navbar bg="primary" data-bs-theme="dark">
                 <Container>
-                    <Navbar.Brand href="#home">Rodapé Controle de Estoque</Navbar.Brand>
+                    <Navbar.Brand href="#home">Todos os direitos reservados</Navbar.Brand>
                 </Container>
             </Navbar>
         </footer>
