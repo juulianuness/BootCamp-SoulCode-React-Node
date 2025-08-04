@@ -7,18 +7,7 @@ import TableProd from "../../components/TableProd/TableProd";
 import { set, useForm } from "react-hook-form";
 import axios from "axios";
 
-const produtosDB = [
-    // { id: 1, nome: "Violão Takamine", quantidade: 540, preco: 1500.00 },
-    // { id: 2, nome: "Guitarra Fender", quantidade: 480, preco: 1200.00 },
-    // { id: 3, nome: "Teclado Yamaha", quantidade: 360, preco: 890.00 },
-    // { id: 4, nome: "Bateria Mapex", quantidade: 320, preco: 2800.00 },
-    // { id: 5, nome: "Baixo Acústico", quantidade: 410, preco: 1350.00 },
-    // { id: 6, nome: "Saxofone", quantidade: 390, preco: 2100.00 },
-    // { id: 7, nome: "Violino", quantidade: 370, preco: 950.00 },
-    // { id: 8, nome: "Cajón", quantidade: 460, preco: 680.00 },
-    // { id: 9, nome: "Banjo 5 cordas", quantidade: 330, preco: 1200.00 },
-    // { id: 10, nome: "Trompete", quantidade: 520, preco: 990.00 }
-]
+const produtosDB = []
 
 
 const nomeValid = { required: { value: true, message: "Preencha o campo produto" }, minLength: { value: 4, message: "Minimo 4 caracteres" } };
@@ -30,9 +19,10 @@ export default function Products() {
     const [produtos, setProdutos] = useState([]);
     const { register, handleSubmit, formState: { errors } } = useForm();
     
-    function onSubmit(dados) {
-        dados.id = produtos.length
-        setProdutos([...produtos, dados]);
+    async function onSubmit(dados) {
+        const url = "https://node-db-6ecm.onrender.com/produtos";
+         await axios.post(url, dados );
+        buscarProdutos();
     }
 
     async function buscarProdutos() {
