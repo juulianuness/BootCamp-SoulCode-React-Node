@@ -5,10 +5,12 @@ import "./Home.css";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+
 let intervalId = 0;
 
 export default function Home() {
     const [time, setTime] = useState("00:00:00");
+    
 
     useEffect(() => {
         startTime();

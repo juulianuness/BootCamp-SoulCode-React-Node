@@ -5,7 +5,9 @@ import Footer from './../../components/Footer/Footer';
 import { useEffect, useState } from "react";
 import TableProd from "../../components/TableProd/TableProd";
 import { set, useForm } from "react-hook-form";
-import axios from "axios";
+import api from "../../api/api";
+import { useAuth } from "../../context/AuthContext";
+import { Navigate } from "react-router-dom";
 
 const produtosDB = []
 
@@ -17,17 +19,25 @@ const precoValid = { required: { value: true, message: "preencha o campo preço"
 
 export default function Products() {
     const [produtos, setProdutos] = useState([]);
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    
+    const [saving, setSaving] = useState(false);
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { isAuthenticated } = useAuth();
+
     async function onSubmit(dados) {
-        const url = "https://node-db-6ecm.onrender.com/produtos";
-         await axios.post(url, dados );
-        buscarProdutos();
+        setSaving(true);
+        try {
+            await api.post("/produtos", dados);
+            reset();
+            buscarProdutos();
+        } catch (error) {
+            window.alert("Houve um erro")
+        }
+        setSaving(false);
     }
 
     async function buscarProdutos() {
-        const url = "https://node-db-6ecm.onrender.com/produtos";
-        const response = await axios.get(url);
+
+        const response = await api.get("/produtos");
         const produtos = response.data;
         setProdutos(produtos);
     }
@@ -35,6 +45,10 @@ export default function Products() {
     useEffect(() => {
         buscarProdutos();
     }, []);
+
+    if (!isAuthenticated) {
+        Navigate("/login")
+    }
 
     return (
         <>
@@ -69,7 +83,7 @@ export default function Products() {
                             </Form.Control.Feedback>
                         </Form.Group>
                     </Row>
-                    <Button type="submit">Cadastrar</Button>
+                    <Button type="submit" disabled={saving}>{saving ? "Cadastrando..." : "Cadastrar"}</Button>
                 </Form>
             </Container>
 
