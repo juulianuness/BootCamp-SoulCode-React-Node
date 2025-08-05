@@ -8,10 +8,18 @@ export default function Login() {
     const { login } = useAuth();
     const navigate = useNavigate();
 
-    function onSubmit(dados) {
-        login();
+    async function onSubmit({email, senha}) {
+        try{
+        await login(email, senha);
         navigate("/");
-        console.log(dados);
+        }catch(error){
+            console.error({...error});
+            if (error.code == "auth/invalid-credential") {
+                window.alert("Email e/ou senha inválidos.");
+            }else {
+                window.alert("Houve um erro no login, tente novamente mais tarde.")
+            }
+        }
     }
 
     return (

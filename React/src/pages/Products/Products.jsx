@@ -1,43 +1,74 @@
-import { Button, Col, Container, Form, Row, Table } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import "./Products.css";
-import Footer from './../../components/Footer/Footer';
 import { useEffect, useState } from "react";
 import TableProd from "../../components/TableProd/TableProd";
-import { set, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import api from "../../api/api";
 import { useAuth } from "../../context/AuthContext";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { firebaseUser, firebaseUserToken } from "../../firebase/auth";
 
-const produtosDB = []
-
-
-const nomeValid = { required: { value: true, message: "Preencha o campo produto" }, minLength: { value: 4, message: "Minimo 4 caracteres" } };
-const quantValid = { required: { value: true, message: "Preencha o campo quantidade" }, min: { value: 1, message: "Quantidade minima 1 peça" } };
-const precoValid = { required: { value: true, message: "preencha o campo preço" }, min: { value: 0.0001, message: "Valor minimo 0.0001" } }
-
+const nomeValid = {
+    required: {
+        value: true,
+        message: "Preencha o nome do produto."
+    },
+    maxLength: {
+        value: 20,
+        message: "O nome do produto deve ter no máximo 20 caracteres."
+    }
+};
+const quantValid = {
+    required: {
+        value: true,
+        message: "Preencha a quantidade de produtos."
+    },
+    min: {
+        value: 1,
+        message: "Quantidade mínima de 1."
+    }
+};
+const precoValid = {
+    required: {
+        value: true,
+        message: "Preencha o preço do produto."
+    },
+    min: {
+        value: 0.0001,
+        message: "O preço do produto não pode ser menor ou igual a 0."
+    }
+};
 
 export default function Products() {
     const [produtos, setProdutos] = useState([]);
     const [saving, setSaving] = useState(false);
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { isAuthenticated } = useAuth();
+    const navigate = useNavigate();
 
     async function onSubmit(dados) {
         setSaving(true);
         try {
-            await api.post("/produtos", dados);
+            const token = await firebaseUserToken();
+            await api.post("/produtos", dados, {
+                headers: { Authorization: token }
+            });
             reset();
             buscarProdutos();
         } catch (error) {
-            window.alert("Houve um erro")
+            window.alert("Houve um erro.");
+            console.error(error);
         }
         setSaving(false);
     }
 
     async function buscarProdutos() {
-
-        const response = await api.get("/produtos");
+        const token = await firebaseUserToken();
+        const response = await api.get("/produtos", {
+            headers: { Authorization: token }
+        });
         const produtos = response.data;
         setProdutos(produtos);
     }
@@ -47,7 +78,7 @@ export default function Products() {
     }, []);
 
     if (!isAuthenticated) {
-        Navigate("/login")
+        navigate("/login");
     }
 
     return (
@@ -83,7 +114,9 @@ export default function Products() {
                             </Form.Control.Feedback>
                         </Form.Group>
                     </Row>
-                    <Button type="submit" disabled={saving}>{saving ? "Cadastrando..." : "Cadastrar"}</Button>
+                    <Button type="submit" disabled={saving}>
+                        {saving ? "Cadastrando..." : "Cadastrar"}
+                    </Button>
                 </Form>
             </Container>
 
